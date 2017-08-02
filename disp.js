@@ -28,7 +28,7 @@ $(function(){
     series: [{
       name: 'Questionaire',
       colorByPoint: true,
-      data: darr
+      data: 'sss'
     }]
   });//highcharts終わり
 
