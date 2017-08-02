@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once('master/prefix.php');
 
 //ナビバー=========================================
@@ -21,14 +20,6 @@ $body.='<a class="navbar-brand" href="/php/menu" tabindex="-1"><img alt="Brand" 
 $body.='</div>';
 $body.='<div class="collapse navbar-collapse" id="nav-menu-1">';
 
-$author2=0;
-$sql='select * from author';
-$rst=selectData(DB_NAME,$sql);
-for($i=0;$i<count($rst);$i++){
-  if($rst[$i]['userID']==$_SESSION['loginid']){
-    $author2=1;
-  }
-}
 
 //左側
 $body.='<ul class="nav navbar-nav">';
@@ -56,7 +47,7 @@ $body.='<div class="container">';
 $body.='<h2 class="toptitle">';
 $body.='回覧内容';
 $body.='</h2><hr />';
-
+$body.='<div id="charts"></div>';
    
    
 
