@@ -1,20 +1,14 @@
-var qarray = new Array();///質問の内容。２次元配列
-var j;
-var obj;
-var a;
-var available=0;
-var tempava=1;//アンケートあるときのavailable監視用
 
 $(function(){ 
 
-            $('.charts').highcharts({
+            $('#charts').highcharts({
               chart: {
                 width:500,
                 height:300,
                 type:'pie'
               },
               title: {
-                text: a.questions[i].content,
+                text: "aaa",
               },
               tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -75,6 +69,8 @@ $(function(){
         if(a.questions[i].answers.length>0){
           console.log(a);
           if(a.questions[i].answers[0].answer!=null && $('#author').val()==1){
+
+
 
           }
         }
