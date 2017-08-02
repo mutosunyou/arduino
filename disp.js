@@ -6,6 +6,40 @@ var available=0;
 var tempava=1;//アンケートあるときのavailable監視用
 
 $(function(){ 
+
+            $('.charts').highcharts({
+              chart: {
+                width:500,
+                height:300,
+                type:'pie'
+              },
+              title: {
+                text: a.questions[i].content,
+              },
+              tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+              },
+              plotOptions:{
+                pie: {
+                  allowPointSelect: true,
+                  cursor: 'pointer',
+                  dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                      color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                  }
+                }
+              },
+              series: [{
+                name: 'Questionaire',
+                colorByPoint: true,
+                data: darr
+              }]
+            });//highcharts終わり
+
+  /*
   if($('#qcount').val()>0){//質問の数
     $('#sendbtn').attr('disabled', 'disabled');//disabled属性を付与する
     tempava=1;
@@ -41,37 +75,7 @@ $(function(){
         if(a.questions[i].answers.length>0){
           console.log(a);
           if(a.questions[i].answers[0].answer!=null && $('#author').val()==1){
-            $('.charts'+i).highcharts({
-              chart: {
-                width:500,
-                height:300,
-                type:'pie'
-              },
-              title: {
-                text: a.questions[i].content,
-              },
-              tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-              },
-              plotOptions:{
-                pie: {
-                  allowPointSelect: true,
-                  cursor: 'pointer',
-                  dataLabels: {
-                    enabled: true,
-                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                    style: {
-                      color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                    }
-                  }
-                }
-              },
-              series: [{
-                name: 'Questionaire',
-                colorByPoint: true,
-                data: darr
-              }]
-            });//highcharts終わり
+
           }
         }
       }//for i終わり
@@ -158,7 +162,7 @@ $(function(){
     );
   });//送信ボタンクリック動作終わり
 
-  /*
+  
   $('*').change(function(){
     if(available==1){
       $('#sendbtn').removeAttr('disabled');
