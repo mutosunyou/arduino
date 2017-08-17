@@ -23,8 +23,8 @@ $body.='<div class="collapse navbar-collapse" id="nav-menu-1">';
 
 //左側
 $body.='<ul class="nav navbar-nav">';
-$body.='<li id="listrun" class="bankmenu"><a tabindex="-1">回覧板</a></li>';
-$body.='<li id="display" class="active applymenu"><a href="#" tabindex="-1">回覧内容確認</a></li>';
+$body.='<li id="listrun" class="bankmenu"><a tabindex="-1">負荷試験</a></li>';
+$body.='<li id="display" class="active applymenu"><a href="#" tabindex="-1">履歴</a></li>';
 $body.='</ul>';
 
 //右側
@@ -40,16 +40,6 @@ $body.='</nav>';
 //隙間調整=========================================
 $body.='<div id="topspace" style="height:70px;"></div>';
 
-//本文/////////////////////////////////////////////
-//タイトル=========================================
-$body.='<div class="container-fluid">';
-$body.='<div class="container">';
-$body.='<h2 class="toptitle">';
-$body.='回覧内容';
-$body.='</h2><hr />';
-$body.='<div id="charts"></div>';
-   
-   
 
 $body.='</div>';//container
 $body.='</div>';//container-fluid

@@ -7,7 +7,7 @@ $(function(){
       type:'pie'
     },
     title: {
-      text: "aaa",
+      text: "負荷試験結果",
     },
     tooltip: {
       pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
