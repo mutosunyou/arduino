@@ -1,7 +1,7 @@
 <?php
 
 require_once('master/prefix.php');
-$sql="insert into counter values('',".$_GET['current'].")";
+$sql="insert into status values('',".$_GET['current'].",".$_GET['voltage'].",".$_GET['power'].",".$_GET['freq'].",".date('Y-m-d H:i:s').")";
 deleteFrom('arduino',$sql);
 
 /*
@@ -51,15 +51,6 @@ $body.='<!--
 $body.='<a class="navbar-brand" href="/php/menu" tabindex="-1"><img alt="Brand" src="./master/favicon.ico"></a>'; 
 $body.='</div>';
 $body.='<div class="collapse navbar-collapse" id="nav-menu-1">';
-
-$author2=0;
-$sql='select * from author';
-$rst=selectData(DB_NAME,$sql);
-for($i=0;$i<count($rst);$i++){
-  if($rst[$i]['userID']==$_SESSION['loginid']){
-    $author2=1;
-  }
-}
 
 //左側
 $body.='<ul class="nav navbar-nav">';
@@ -211,14 +202,11 @@ $body.='<input type="checkbox" id="secret" />アンケートの結果を公開�
 
 //横線===============================================
 $body.='<hr />';
-
 $body.='</div>';//div id=questionnaire
 
 //送信ボタン=========================================
 $body.='<button id="sendbtn" class="btn btn-sm btn-success pull-right" disabled="disabled">送信内容確認</button>';
-
 $body.='<div id="ppp"></div>';//デバッグ用
-
 $body.='</div>';//container
 
 //確認画面
